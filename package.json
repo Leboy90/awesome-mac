@@ -6,10 +6,13 @@
   "funding": "https://jaywcjlove.github.io/#/sponsor",
   "main": "dist/awesome-mac.json",
   "scripts": {
-    "start": "npm run build && npm run create:ast",
-    "doc": "idoc --watch",
-    "build": "idoc",
-    "create:ast": "node build/ast.mjs"
+  "start": "npm run build && npm run create:ast",
+  "prestart": "echo \"Running build.. see 'dist/' after start finishes\"",
+  "doc": "idoc --watch",
+  "build": "idoc",
+  "create:ast": "node build/ast.mjs",
+  "serve": "live-server ./dist --port=8000 --quiet",
+  "serve:static": "http-server ./dist -p 8000 --silent"
   },
   "repository": {
     "type": "git",
@@ -36,6 +39,8 @@
     "idoc": "^1.26.5",
     "remark": "^14.0.2",
     "remark-gfm": "^3.0.1",
-    "to-vfile": "^7.2.3"
+  "to-vfile": "^7.2.3",
+  "http-server": "^14.1.1",
+  "live-server": "^1.2.2"
   }
 }
